@@ -8,7 +8,7 @@ require([
 ], function(Map, MapView, FeatureLayer){
 
   var map = new Map({
-    basemap: "hybrid"
+    basemap: "streets"
   });
   var view = new MapView({
     container: "viewDiv",  // Reference to the scene div created in step 5
