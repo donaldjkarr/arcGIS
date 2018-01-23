@@ -35,7 +35,7 @@
 	     });
 
 	     var view = new MapView({
-	       center: [-80, 35],
+	       center: [-49.97, 41.73],
 	       container: "viewDiv",
 	       map: map,
 	       zoom: 4
@@ -54,8 +54,14 @@
 
 	     var otherPoint = {
 	       type: "point", // autocasts as new Point()
-	       longitude: -50.97,
-	       latitude: 44.73
+	       longitude: -74.00,
+	       latitude: 40.71
+	     };
+
+	     var belfastPoint = {
+	       type: "point", // autocasts as new Point()
+	       longitude: -5.93,
+	       latitude: 54.6
 	     };
 
 	     // Create a symbol for drawing the point
@@ -64,7 +70,7 @@
 	       color: [226, 119, 40],
 	       outline: { // autocasts as new SimpleLineSymbol()
 	         color: [255, 255, 255],
-	         width: 2
+	         width: 4
 	       }
 	     };
 
@@ -73,7 +79,16 @@
 	       color: [230, 119, 50],
 	       outline: { // autocasts as new SimpleLineSymbol()
 	         color: [200, 255, 10],
-	         width: 3
+	         width: 2
+	       }
+	     };
+
+	     var belfastSymbol = {
+	       type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+	       color: [20, 119, 50],
+	       outline: { // autocasts as new SimpleLineSymbol()
+	         color: [200, 100, 50],
+	         width: 2
 	       }
 	     };
 
@@ -88,7 +103,12 @@
 	       symbol: otherSymbol
 	     });
 
-	     view.graphics.addMany([pointGraphic, otherGraphic]);
+	     var belfastGraphic = new Graphic({
+	       geometry: belfastPoint,
+	       symbol: belfastSymbol
+	     });
+
+	     view.graphics.addMany([pointGraphic, otherGraphic, belfastGraphic]);
 	   });
 
 	</script>
